@@ -1,69 +1,131 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Joseph, My Valentine ❤️</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Joseph, Will You Be My Valentine? ❤️</title>
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: linear-gradient(135deg, #ff758c, #ff7eb3);
       color: #fff;
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 100vh;
+      height: 100vh;
+      text-align: center;
       padding: 20px;
+      overflow: hidden;
     }
-    .card {
+    .container {
       background: rgba(255, 255, 255, 0.15);
       padding: 30px;
       border-radius: 20px;
-      max-width: 700px;
+      max-width: 600px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.25);
     }
     h1 {
-      text-align: center;
-      font-size: 2.4rem;
-      margin-bottom: 20px;
+      font-size: 2.5rem;
+      margin-bottom: 30px;
     }
-    p {
-      font-size: 1.05rem;
-      line-height: 1.8;
-      white-space: pre-line;
+    button {
+      background: #ff4b5c;
+      border: none;
+      color: white;
+      padding: 15px 40px;
+      font-size: 1.4rem;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+      box-shadow: 0 4px 15px rgba(255, 75, 92, 0.6);
     }
-    .footer {
-      text-align: center;
+    button:hover {
+      transform: scale(1.1);
+    }
+    .message {
       margin-top: 30px;
       font-size: 1.1rem;
-      font-weight: bold;
+      line-height: 1.6;
+      white-space: pre-line;
+      display: none;
+      user-select: text;
+    }
+    .heart {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      width: 50px;
+      height: 50px;
+      animation: beat 1s infinite;
+      fill: #ff4b5c;
+      display: none;
+    }
+    @keyframes beat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.3); }
     }
   </style>
 </head>
 <body>
-  <div class="card">
-    <h1>Joseph ❤️</h1>
-    <p>
-My love,I don’t love you lightly. I don’t love you halfway. I love you in a way that reaches the parts of you you don’t show the world—the tired parts, the scared parts, the parts that feel unworthy of being chosen.
+  <div class="container">
+    <h1>Joseph, Will You Be My Valentine? ❤️</h1>
+    <button id="valentineBtn">Yes, I Will!</button>
+    <p class="message" id="message">
+My love,
 
-If the world ever gets too loud for you, let my heart be the quiet place you rest. If life ever makes you feel small, let my love remind you how powerful you truly are. If you ever doubt yourself, remember there is a woman who believes in you so fiercely it scares her sometimes.
+I don’t love you lightly.
+I don’t love you halfway.
+I love you in a way that reaches the parts of you you don’t show the world—the tired parts, the scared parts, the parts that feel unworthy of being chosen.
 
-I see your strength, but I also see your pain. I see the battles you don’t talk about. And still—I choose you. Not because you are perfect, but because you are real, and your heart feels like home to mine.
+If the world ever gets too loud for you, let my heart be the quiet place you rest.
+If life ever makes you feel small, let my love remind you how powerful you truly are.
+If you ever doubt yourself, remember there is a woman who believes in you so fiercely it scares her sometimes.
 
-Loving you has taught me patience, courage, and the meaning of loyalty. You make me want to protect you, pray for you, fight for you, and stand beside you even when the whole world turns its back.
+I see your strength, but I also see your pain.
+I see the battles you don’t talk about.
+And still—I choose you.
+Not because you are perfect, but because you are real, and your heart feels like home to mine.
 
-If love were sacrifice, I would give it willingly. If love were endurance, I would last forever. If love meant laying my life down just so you never feel alone again—I wouldn’t hesitate.
+Loving you has taught me patience, courage, and the meaning of loyalty.
+You make me want to protect you, pray for you, fight for you, and stand beside you even when the whole world turns its back.
 
-You are not just the man I love. You are the man I respect, the man I admire, the man my heart recognizes even in a crowd.
+If love were sacrifice, I would give it willingly.
+If love were endurance, I would last forever.
+If love meant laying my life down just so you never feel alone again—I wouldn’t hesitate.
+
+You are not just the man I love.
+You are the man I respect, the man I admire, the man my heart recognizes even in a crowd.
 
 I thank God for you—not just for the good days, but for every moment that shaped you into who you are.
 
-Please know this: You are deeply loved. You are enough. You are safe with me.
+Please know this:
+You are deeply loved.
+You are enough.
+You are safe with me.
 
 And as long as I breathe, my heart will choose you—again and again, without fear.
 
-Happy Valentine’s Day, my love. You are my forever. </p> <div class="footer">Forever Yours ❤️</div>
-
+Happy Valentine’s Day, my love.
+You are my forever.
+    </p>
   </div>
+  <svg class="heart" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" id="heartIcon">
+    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 
+    7.5 3c1.74 0 3.41 0.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 
+    19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+  </svg>
+
+  <script>
+    const btn = document.getElementById('valentineBtn');
+    const msg = document.getElementById('message');
+    const heart = document.getElementById('heartIcon');
+
+    btn.addEventListener('click', () => {
+      btn.style.display = 'none';
+      msg.style.display = 'block';
+      heart.style.display = 'block';
+    });
+  </script>
 </body>
 </html>
